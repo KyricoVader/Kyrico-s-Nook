@@ -1,0 +1,23 @@
+.body {
+    width: 100vw;
+    min-height: 100vh;
+    background: #f4f7fc;
+    position: relative;
+    display: flex;
+    /* overflow: hidden;  确保body不出现滚动条 */
+}
+
+.topBar {
+    width: 100vw;
+    height: 264px;
+    background: #153d77;
+    position: absolute;
+}
+
+.main {
+    /*width: calc(100% - 250px);*/
+    flex-grow: 1; /* 占据剩余空间 */
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}

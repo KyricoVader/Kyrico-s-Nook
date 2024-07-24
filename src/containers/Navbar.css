@@ -1,0 +1,83 @@
+/*右侧导航栏部分*/
+.navbar{
+    display: flex;  /* 子元素横向排列 */
+    align-items: center; /* 使子元素(link区域)垂直居中 */
+    /*justify-content: space-between; !* 水平方向上均匀分布，需要取消掉navbar-link-container的flex-grow才能起作用 *!*/
+    padding-right: 8px; /* 右侧空出一定间距 */
+    height: 64px;
+}
+.navbar-toggle{
+    width: 64px;
+    display: flex;  /* 添加flex布局 */
+    justify-content: center;  /* 使子元素水平居中 */
+}
+.navbar-toggle-img{
+    width: 26px;
+}
+
+.navbar-search{
+    /*使得navbar-search-input垂直居中*/
+    display: flex;
+    align-items: center;
+    /*背景颜色*/
+    background-color: #f0f0f0;
+    width: 400px;      /* 搜索的输入框+搜索图标总长度 */
+    height: 32px;
+    border: 2px solid lightgray;    /* 边框为2px粗,颜色为亮黑色,实线 */
+    border-radius: 4px;     /* 让边框的折角圆润些 */
+    /*margin-left: 64px;      !* 搜索框左侧一定程度留白 *!*/
+}
+.navbar-search-input {
+    border: 0;                 /* 取消未聚焦时的外边框 */
+    background-color: #ffffff; /* 白色 */
+    position: relative;        /*将 .header-search-input 设置为相对定位的父容器*/
+    width: 366px;   /* 搜索的输入框长度 */
+    height: 30px;
+    border-radius: 2px;
+    font-size: 16px;        /* 字体大小设置 */
+}
+.navbar-search-input:hover {
+    background-color: #ebebeb; /* 灰色 */
+}
+.navbar-search-input:focus {
+    outline: none;             /* 取消聚焦时的外边框 */
+    background-color: #ffffff; /* 白色 */
+}
+.navbar-search-input::placeholder {
+    /*结合父元素position: relative，对placeholder绝对定位实现垂直居中*/
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+.navbar-search-icon {
+    vertical-align: sub;    /* 使Logo图标居中 */
+    width: 24px;    /* 搜索图标长度 */
+    padding: 4px;
+    border-radius: 4px;
+}
+.navbar-search-icon:active {
+    background-color: #e3e3e3; /* 点击时背景颜色变为灰色 */
+}
+.navbar-search-icon:hover {
+    cursor: pointer; /* 添加手型指针 */
+}
+
+.navbar-link-container {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-grow: 1;       /*占据剩余空间*/
+}
+.navbar-link {
+    text-decoration: none;  /* 去除a标签中文字的下划线 */
+    display: block; /* 将链接显示为块级元素,以便设置长和高 */
+    padding: 9px;   /* 拓展首页标签区域,填充满导航栏 */
+    border-radius: 4px;
+}
+.navbar-link:hover {
+    background-color: #0c2a56;  /*背景颜色*/
+}
+.navbar-icon {
+    vertical-align: sub;    /* 使Logo图标居中 */
+    width: 25px;    /* 设置网页Logo宽度 */
+}

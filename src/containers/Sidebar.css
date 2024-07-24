@@ -1,0 +1,129 @@
+/* Sidebar.css */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #ffffff;
+    overflow-y: auto;
+    position: relative;
+    word-wrap: break-word; /* 文字自动换行 */
+    box-shadow: 2px 2px 15px 5px rgba(21, 61, 119, 0.07);/*水平偏移量 垂直偏移量 模糊半径 扩散半径 颜色*/
+}
+
+.brand {
+    height: 64px;
+    background: #153d77;
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    /*justify-content: center; !* 水平居中 *!*/
+    gap: 10px; /* 控制标题和图标之间的间距 */
+}
+
+.brand h3 {
+    color: white; /* 设置字体颜色为白色 */
+    font-weight: normal; /* 调整字体粗细 */
+    margin-left: 8px;
+}
+
+.icon {
+    width: 32px; /* 根据需要设置尺寸 */
+    height: 32px;
+    margin-left: 16px; /*上下 左右*/
+}
+
+.user {
+    height: 157px;
+}
+
+/*头像部分*/
+.avatar{
+    display: flex;
+    flex-direction: column; /* 在设置flex的基础上设置column，会让该区域子项的横竖反转，如原来的垂直居中样式变成水平居中 */
+    align-items: center; /* 原来是垂直居中，现被调整为水平居中 */
+    padding-top: 30px;
+}
+.avatar-img{
+    width: 72px;    /* 头像长度 */
+    border-radius: 36px;
+}
+.avatar-name{
+    font-weight: 600;
+}
+.avatar-email{
+    font-size: 14px;
+    color: #626262;
+}
+
+/*导航列表部分*/
+.sub-navbar{
+    margin-top: 40px;
+    width: 220px;   /* 二级列表外围容器长度 */
+}
+.sub-navbar-theme{
+    padding: 8px;
+    margin: 5px;
+    color: #9b9b9b;
+}
+.sub-navbar-link {
+    text-decoration: none;  /* 去除a标签中文字的下划线 */
+    display: flex;
+    color: #282c34;     /* a标签内字体颜色 */
+    padding: 8px;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer; /* 添加手型指针 */
+}
+
+.sub-navbar-link:hover,
+.sub-navbar-link.active {
+    background-color: #dadada;  /*背景颜色*/
+}
+
+.sub-navbar-icon {
+    vertical-align: middle;    /* 使Logo图标居中 */
+    margin-right: 13px;  /*文字与二级菜单Logo的间距*/
+    width: 20px;
+}
+
+.sub-navbar-title {
+    flex-grow: 1; /* 占据剩余空间 */
+    vertical-align: middle;
+}
+.toggle-icon {
+    vertical-align: middle;
+    width: 20px; /* 根据需要设置尺寸 */
+    margin-left: 10px;
+}
+
+.sub-menu {
+    margin-left: 20px;
+    margin-top: 5px;
+
+    max-height: 0;      /*动画效果*/
+    overflow: hidden;
+    /*transition: max-height 0.3s ease-out;*/
+}
+
+.sub-menu.open {
+    overflow: hidden;
+}
+
+.sub-navbar-sublink {
+    text-decoration: none;
+    display: block;
+    color: #707070;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 0 10px;
+    cursor: pointer; /* 添加手型指针 */
+    font-size: 15px;
+}
+
+.sub-navbar-sublink:hover,
+.sub-navbar-sublink.active {
+    font-weight: 640;
+    color: #282c34;
+}
+
+.sub-navbar-subtitle {
+    margin-left: 20px;  /* 控制二级菜单标题的缩进 */
+}

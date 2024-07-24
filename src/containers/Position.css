@@ -1,0 +1,22 @@
+.position {
+    height: 64px;
+    /* background: #8a70e8; */
+    margin: 36px 48px 24px 48px; /* 上右下左，顺时针 */
+    padding: 16px;
+    z-index: 1;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+    padding: 0;
+}
+
+.file-path {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
