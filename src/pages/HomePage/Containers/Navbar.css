@@ -53,7 +53,7 @@
 .navbar-search-icon {
     vertical-align: sub;    /* 使Logo图标居中 */
     width: 24px;    /* 搜索图标长度 */
-    padding: 4px;
+    padding: 4px 8px;
     border-radius: 4px;
 }
 .navbar-search-icon:active {
@@ -63,21 +63,21 @@
     cursor: pointer; /* 添加手型指针 */
 }
 
-.navbar-link-container {
+.navbar-function-container {
     display: flex;
     flex-direction: row-reverse;
     flex-grow: 1;       /*占据剩余空间*/
 }
-.navbar-link {
+.navbar-function {
     text-decoration: none;  /* 去除a标签中文字的下划线 */
     display: block; /* 将链接显示为块级元素,以便设置长和高 */
     padding: 9px;   /* 拓展首页标签区域,填充满导航栏 */
     border-radius: 4px;
 }
-.navbar-link:hover {
+.navbar-function:hover {
     background-color: #0c2a56;  /*背景颜色*/
 }
-.navbar-icon {
+.navbar-function-icon {
     vertical-align: sub;    /* 使Logo图标居中 */
-    width: 25px;    /* 设置网页Logo宽度 */
+    width: 20px;    /* 设置网页Logo宽度 */
 }

@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
-import logo from './../assets/电波_waves.svg';
-import avatar from './../assets/avatar.jpg';
-import code from './../assets/代码_code.svg'
-import communication from './../assets/沟通_communication.svg';
-import book from './../assets/书籍-打开_book-open.svg';
-import chart from './../assets/折线图_chart-line.svg';
-import document from './../assets/文档详情_doc-detail.svg';
-import video from './../assets/视频_video-two.svg';
-import config from './../assets/配置_config.svg';
-import me from './../assets/我的_me.svg';
-import down from './../assets/下_down.svg'
-import right from './../assets/右_right.svg'
+import logo from '../../../assets/电波_waves.svg';
+import avatar from '../../../assets/avatar.jpg';
+import code from '../../../assets/代码_code.svg'
+import communication from '../../../assets/沟通_communication.svg';
+import book from '../../../assets/书籍-打开_book-open.svg';
+import chart from '../../../assets/折线图_chart-line.svg';
+import document from '../../../assets/文档详情_doc-detail.svg';
+import video from '../../../assets/视频_video-two.svg';
+import config from '../../../assets/配置_config.svg';
+import me from '../../../assets/我的_me.svg';
+import down from '../../../assets/下_down.svg'
+import right from '../../../assets/右_right.svg'
 
 const subNavbar = [
     {

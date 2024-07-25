@@ -1,21 +1,19 @@
-.body {
-    width: 100vw;
+.home-page {
+    width: 100%;
     min-height: 100vh;
     background: #f4f7fc;
     position: relative;
     display: flex;
-    /* overflow: hidden;  确保body不出现滚动条 */
 }
 
-.topBar {
-    width: 100vw;
+.background-bar {
+    width: 100%;
     height: 264px;
     background: #153d77;
     position: absolute;
 }
 
-.main {
-    /*width: calc(100% - 250px);*/
+.main-page {
     flex-grow: 1; /* 占据剩余空间 */
     display: flex;
     flex-direction: column;

@@ -1,21 +1,15 @@
 import './Position.css'
 
-
-const title = ["Theme", "Theme", "Theme"];
-const filePath = ["disk", "/", "folder", "/", "file"];
+const filePath = ["disk", "/", "folder", "/", "file", "/", "在React中使用CSS的7种方式"];
 
 function Position(){
     return(
             <div className="position">
                 <p className="title">
-                    {title.map((word, index) => (
-                        <span key={index}>
-                {word}
-                            {index < title.length - 1 && " "}
-              </span>
-                    ))}
+                    <span>在React中使用CSS的7种方式</span>
                 </p>
-                <p className="file-path">
+                <p/> {/*增加间距*/}
+                <p className="web-page-path">
                     {filePath.map((word, index) => (
                         <span key={index}>
                 {word}
