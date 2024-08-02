@@ -1,6 +1,0 @@
-.main-content {
-    display: flex;
-    flex-grow: 1;
-    margin: 0 64px 24px 64px; /* 上右下左，顺时针 */
-}
-

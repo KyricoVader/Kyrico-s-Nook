@@ -1,10 +1,9 @@
-/*右侧导航栏部分*/
 .navbar{
     display: flex;  /* 子元素横向排列 */
     align-items: center; /* 使子元素(link区域)垂直居中 */
-    /*justify-content: space-between; !* 水平方向上均匀分布，需要取消掉navbar-link-container的flex-grow才能起作用 *!*/
     padding-right: 8px; /* 右侧空出一定间距 */
     height: 64px;
+    /*justify-content: space-between; !* 水平方向上均匀分布，需要取消掉navbar-link-container的flex-grow才能起作用 *!*/
 }
 .navbar-toggle{
     width: 64px;
@@ -13,6 +12,12 @@
 }
 .navbar-toggle-img{
     width: 26px;
+    cursor: pointer; /* 添加手型指针 */
+    padding: 6px;   /* 拓展首页标签区域,填充满导航栏 */
+    border-radius: 4px;
+}
+.navbar-toggle-img:hover {
+    background-color: #0c2a56;  /*背景颜色*/
 }
 
 .navbar-search{
@@ -25,7 +30,6 @@
     height: 32px;
     border: 2px solid lightgray;    /* 边框为2px粗,颜色为亮黑色,实线 */
     border-radius: 4px;     /* 让边框的折角圆润些 */
-    /*margin-left: 64px;      !* 搜索框左侧一定程度留白 *!*/
 }
 .navbar-search-input {
     border: 0;                 /* 取消未聚焦时的外边框 */
@@ -56,12 +60,15 @@
     padding: 4px 8px;
     border-radius: 4px;
 }
-.navbar-search-icon:active {
-    background-color: #e3e3e3; /* 点击时背景颜色变为灰色 */
-}
 .navbar-search-icon:hover {
     cursor: pointer; /* 添加手型指针 */
+    background-color: #e3e3e3; /* 点击时背景颜色变为灰色 */
+
 }
+/*注释掉，但代码留着*/
+/*.navbar-search-icon:active {*/
+/*    background-color: #e3e3e3; !* 点击时背景颜色变为灰色 *!*/
+/*}*/
 
 .navbar-function-container {
     display: flex;

@@ -1,0 +1,60 @@
+.title-input {
+    height: 72px;
+    margin: 24px 0; /* 上右下左，顺时针 */
+    padding: 12px;
+    z-index: 1;
+    position: relative;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 640;
+    color: #f4f4f4;
+    margin: 0 0 4px 0;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.title:focus {
+    outline: none;
+}
+.title::placeholder {
+    color: #f4f4f4;
+    font-weight: 500;
+    font-size: 23px;
+}
+
+.article-class-fiction {
+    display: flex;
+    width: 100%;
+}
+.article-class-fiction select {
+    width: 197px;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.sending-container{
+    width: 64px;
+    height: 64px;
+    background-color: #153d77;
+    border-radius: 32px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-24px, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* 鼠标悬停时显示手型指针 */
+}
+.sending-container:hover{
+    background-color: #0c2a56;
+}
+.send-new-article {
+    width: 32px;
+}

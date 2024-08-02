@@ -1,0 +1,63 @@
+.position {
+    height: 72px;
+    background: #153d77;
+    margin: 24px 0; /* 上右下左，顺时针 */
+    padding: 12px;
+    z-index: 1;
+    position: relative;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 640;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+    padding: 0;
+    background-color: #153d77;
+}
+
+.web-page-path {
+    font-size: 18px;
+    color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.web-page-path-item {
+    display: inline;
+    align-items: center;
+
+}
+.position-link {
+    color: #f4f4f4;
+    text-decoration: 0;  /* 去除a标签中文字的下划线 */
+}
+.position-link:hover {
+    color: #ffffff;
+    font-weight: 640;
+}
+.separator {
+    margin: 0 6px; /* 可选：增加分隔符左右的间距 */
+}
+
+.writing-container{
+    width: 64px;
+    height: 64px;
+    background-color: #153d77;
+    border-radius: 32px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-264px, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* 鼠标悬停时显示手型指针 */
+}
+.writing-container:hover{
+    background-color: #0c2a56;
+}
+.add-new-article {
+    width: 32px;
+}

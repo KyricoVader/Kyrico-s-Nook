@@ -1,0 +1,4 @@
+.blog {
+    flex-grow: 1;
+    margin: 0 54px 24px 54px; /* 上右下左，顺时针 */
+}

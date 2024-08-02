@@ -12,10 +12,24 @@
     background: #153d77;
     position: absolute;
 }
+.sidebar-control {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar-control.hidden {
+    transform: translateX(-250px);
+}
 
 .main-page {
     flex-grow: 1; /* 占据剩余空间 */
     display: flex;
     flex-direction: column;
     z-index: 1;
+    margin-left: 0;
+    transition: margin-left 0.36s ease;
+}
+
+.main-page.hidden {
+    margin-left: -250px;
 }

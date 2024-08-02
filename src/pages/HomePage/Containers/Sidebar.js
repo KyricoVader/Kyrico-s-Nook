@@ -1,45 +1,24 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Sidebar.css';
 import logo from '../../../assets/电波_waves.svg';
 import avatar from '../../../assets/avatar.jpg';
-import code from '../../../assets/代码_code.svg'
-import communication from '../../../assets/沟通_communication.svg';
-import book from '../../../assets/书籍-打开_book-open.svg';
-import chart from '../../../assets/折线图_chart-line.svg';
-import document from '../../../assets/文档详情_doc-detail.svg';
-import video from '../../../assets/视频_video-two.svg';
-import config from '../../../assets/配置_config.svg';
-import me from '../../../assets/我的_me.svg';
-import down from '../../../assets/下_down.svg'
-import right from '../../../assets/右_right.svg'
-
-const subNavbar = [
-    {
-        icon: code,
-        title: 'Programming',
-        subMenu: [
-            { title: 'JavaScript' },
-            { title: 'Java' },
-            { title: 'Python' },
-            { title: 'Golang' },
-        ]
-    },
-    { icon: communication, title: 'Chatting' },
-    { icon: book, title: 'Learning' },
-    { icon: chart, title: 'Data Analysis' },
-    { icon: document, title: 'Article' },
-    { icon: video, title: 'Movie' },
-    { icon: config, title: 'Setting' },
-    { icon: me, title: 'Profile' },
-];
+import down from '../../../assets/下_down.svg';
+import right from '../../../assets/右_right.svg';
+import { menuList } from "../../../config/Mock";
 
 function Sidebar() {
-    const [activeIndex, setActiveIndex] = useState(null);
+    const [activeMenuIndex, setActiveMenuIndex] = useState(null);
     const [activeSubIndex, setActiveSubIndex] = useState(null);
 
     const handleMainClick = (index) => {
-        setActiveIndex(activeIndex === index ? null : index);
-        setActiveSubIndex(null); // Reset sub-menu selection when toggling main menu
+        if (!menuList[index].subMenu || menuList[index].subMenu.length === 0) {
+            setActiveMenuIndex(activeMenuIndex === index ? null : index);
+            setActiveSubIndex(null);
+        } else {
+            setActiveMenuIndex(activeMenuIndex === index ? null : index);
+            setActiveSubIndex(null);
+        }
     };
 
     const handleSubClick = (subIndex) => {
@@ -48,51 +27,58 @@ function Sidebar() {
 
     return (
         <div className="sidebar">
-            <div className="brand">
+            <Link to={""} className="logo">
                 <img alt="logo" src={logo} className="icon" />
                 <h3>Kyrico's Space</h3>
-            </div>
+            </Link>
             <div className="user">
-                <div className="avatar">
-                    <img src={avatar} alt="Avatar" className="avatar-img" />
-                    <span className="avatar-name">KyricoVader</span>
-                    <span className="avatar-email">kyricovader@gmail.com</span>
-                </div>
+                <img src={avatar} alt="Avatar" className="user-avatar" />
+                <span className="user-name">KyricoVader</span>
+                <span className="user-email">kyricovader@gmail.com</span>
             </div>
-            <div className="sub-navbar">
-                <span className="sub-navbar-theme">Main</span>
-                {subNavbar.map((item, index) => (
+            <div className="menu">
+                <span className="menu-theme">Main</span>
+                {menuList.map((item, index) => (
                     <div key={index}>
-                        <div
-                            className={`sub-navbar-link ${activeIndex === index ? 'active' : ''}`}
-                            onClick={() => handleMainClick(index)}
-                        >
-                            <img src={item.icon} alt={`Article ${index + 1}`} className="sub-navbar-icon" />
-                            <span className="sub-navbar-title">{item.title}</span>
-                            {item.subMenu && (
-                                <img
-                                    src={activeIndex === index ? down : right}
-                                    alt="toggle-icon"
-                                    className="toggle-icon"
-                                />
-                            )}
-                        </div>
-                        {item.subMenu && (
+                        {item.router ? (
+                            <Link to={item.router} className="menu-link">
+                                <img src={item.icon} alt={`Menu ${index + 1}`} className="menu-icon" />
+                                <span className="menu-title">{item.title}</span>
+                            </Link>
+                        ) : (
                             <div
-                                className={`sub-menu ${activeIndex === index ? 'open' : ''}`}
+                                className={`menu-link ${activeMenuIndex === index ? 'active' : ''}`}
+                                onClick={() => handleMainClick(index)}
+                            >
+                                <img src={item.icon} alt={`Menu ${index + 1}`} className="menu-icon" />
+                                <span className="menu-title">{item.title}</span>
+                                {item.subMenu && (
+                                    <img
+                                        src={activeMenuIndex === index ? down : right}
+                                        alt="menu-toggle-icon"
+                                        className="menu-toggle-icon"
+                                    />
+                                )}
+                            </div>
+                        )}
+                        {item.subMenu && !item.router && (
+                            <div
+                                className={`sub-menu`}
                                 style={{
-                                    maxHeight: activeIndex === index ? `${item.subMenu.length * 30}px` : '0',
-                                    transition:'max-height'+ ` ${item.subMenu.length * (60-item.subMenu.length * 2.5)}ms `+'ease-out'
+                                    maxHeight: activeMenuIndex === index ? `${item.subMenu.length * 30}px` : '0',
+                                    transition: `max-height ${item.subMenu.length * (60 - item.subMenu.length * 2.5)}ms ease-out`
                                 }}
                             >
-                                {item.subMenu.map((subItem, subIndex) => (
-                                    <div
-                                        className={`sub-navbar-sublink ${activeSubIndex === subIndex ? 'active' : ''}`}
+
+                            {item.subMenu.map((subItem, subIndex) => (
+                                    <Link
+                                        to={subItem.router}
+                                        className={`menu-sublink ${activeSubIndex === subIndex ? 'active' : ''}`}
                                         key={subIndex}
                                         onClick={() => handleSubClick(subIndex)}
                                     >
-                                        <span className="sub-navbar-subtitle">{subItem.title}</span>
-                                    </div>
+                                        <span className="menu-subtitle">{subItem.title}</span>
+                                    </Link>
                                 ))}
                             </div>
                         )}
